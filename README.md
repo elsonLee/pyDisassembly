@@ -1,4 +1,4 @@
 pyDisassembly
 =============
 
-Disassembly tools, temporarily for mips instruction set
+Disassembly tools, for customized instruction sets, temporarily for mips instruction set

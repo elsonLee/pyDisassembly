@@ -1,0 +1,251 @@
+MIPS32#FLOAT#43#COP1 010001 fmt 00000 fs fd 000101 #5 5 5 5 6 #ABS.S fd, fs #Floating Point Absolute Value ABS.fmt
+MIPS32#FLOAT#43#COP1 010001 fmt 00000 fs fd 000101 #5 5 5 5 6 #ABS.D fd, fs #Floating Point Absolute Value ABS.fmt
+MIPS64,MIPS32R2#INVALID#43#COP1 010001 fmt 00000 fs fd 000101 #5 5 5 5 6 #ABS.PS fd, fs #Floating Point Absolute Value ABS.fmt
+MIPS32#ALU#44#SPECIAL 000000 rs rt rd 00000 100000 #5 5 5 5 6 #ADD rd, rs, rt #Add Word ADD
+MIPS32#FLOAT#45#COP1 010001 fmt ft fs fd 000000 #5 5 5 5 6 #ADD.S fd, fs, ft #Floating Point Add ADD.fmt
+MIPS32#FLOAT#45#COP1 010001 fmt ft fs fd 000000 #5 5 5 5 6 #ADD.D fd, fs, ft #Floating Point Add ADD.fmt
+MIPS64,MIPS32R2#INVALID#45#COP1 010001 fmt ft fs fd 000000 #5 5 5 5 6 #ADD.PS fd, fs, ft #Floating Point Add ADD.fmt
+MIPS32#ALU#46#ADDI 001000 rs rt immediate #5 5 16 #ADDI rt, rs, immediate #Add Immediate Word ADDI
+MIPS32#ALU#47#ADDIU 001001 rs rt immediate #5 5 16 #ADDIU rt, rs, immediate #Add Immediate Unsigned Word ADDIU
+MIPS32#ALU#48#SPECIAL 000000 rs rt rd 00000 100001 #5 5 5 5 6 #ADDU rd, rs, rt #Add Unsigned Word ADDU
+MIPS64,MIPS32R2#INVALID#49#COP1X 010011 rs ft fs fd 011110 #5 5 5 5 6 #ALNV.PS fd, fs, ft, rs #Floating Point Align Variable
+MIPS32#ALU#52#SPECIAL 000000 rs rt rd 00000 100100 #5 5 5 5 6 #AND rd, rs, rt #And AND
+MIPS32#ALU#53#ANDI 001100 rs rt immediate #5 5 16 #ANDI rt, rs, immediate #And Immediate ANDI
+ASSEMBLY IDIOM#BRANCH#54#BEQ 000100 00000 00000 offset #5 5 16 #B offset #Unconditional Branch B
+ASSEMBLY IDIOM#BRANCH#55#REGIMM 000001 00000 10001 offset #5 5 16 #BAL r31, offset #Branch and Link BAL
+MIPS32#BRANCH#56#COP1 010001 01000 ccn 0 0 offset #5 3 1 1 16 #BC1F   offset (cc = 0 implied) #Branch on FP False BC1F
+MIPS32#BRANCH#58#COP1 010001 01000 ccn 1 0 offset #5 3 1 1 16 #BC1FL   offset (cc = 0 implied) #Branch on FP False Likely BC1FL
+MIPS32#BRANCH#60#COP1 010001 01000 ccn 0 1 offset #5 3 1 1 16 #BC1T offset (cc = 0 implied) #Branch on FP True BC1T
+MIPS32#BRANCH#62#COP1 010001 01000 ccn 1 1 offset #5 3 1 1 16 #BC1TL   offset (cc = 0 implied) #Branch on FP True Likely BC1TL
+MIPS32#INVALID#64#COP2 010010 01000 ccn 0 0 offset #5 3 1 1 16 #BC2F   offset (cc = 0 implied) #Branch on COP2 False BC2F
+MIPS32#INVALID#65#COP2 010010 01000 ccn 1 0 offset #5 3 1 1 16 #BC2FL   offset (cc = 0 implied) #Branch on COP2 False Likely BC2FL
+MIPS32#INVALID#67#COP2 010010 01000 ccn 0 1 offset #5 3 1 1 16 #BC2T offset (cc = 0 implied) #Branch on COP2 True BC2T
+MIPS32#INVALID#68#COP2 010010 01000 ccn 1 1 offset #5 3 1 1 16 #BC2TL   offset (cc = 0 implied) #Branch on COP2 True Likely BC2TL
+MIPS32#BRANCH#70#BEQ 000100 rs rt offset #5 5 16 #BEQ rs, rt, offset #Branch on Equal BEQ
+MIPS32#BRANCH#71#BEQL 010100 rs rt offset #5 5 16 #BEQL rs, rt, offset #Branch on Equal Likely BEQL
+MIPS32#BRANCH#73#REGIMM 000001 rs 00001 offset #5 5 16 #BGEZ rs, offset #Branch on Greater Than or Equal to Zero BGEZ
+MIPS32#BRANCH#74#REGIMM 000001 rs 10001 offset #5 5 16 #BGEZAL rs, offset #Branch on Greater Than or Equal to Zero and Link BGEZAL
+MIPS32#BRANCH#75#REGIMM 000001 rs 10011 offset #5 5 16 #BGEZALL rs, offset #Branch on Greater Than or Equal to Zero and Link Likely BGEZALL
+MIPS32#BRANCH#77#REGIMM 000001 rs 00011 offset #5 5 16 #BGEZL rs, offset #Branch on Greater Than or Equal to Zero Likely BGEZL
+MIPS32#BRANCH#79#BGTZ 000111 rs 00000 offset #5 5 16 #BGTZ rs, offset #Branch on Greater Than Zero BGTZ
+MIPS32#BRANCH#80#BGTZL 010111 rs 00000 offset #5 5 16 #BGTZL rs, offset #Branch on Greater Than Zero Likely BGTZL
+MIPS32#BRANCH#82#BLEZ 000110 rs 00000 offset #5 5 16 #BLEZ rs, offset #Branch on Less Than or Equal to Zero BLEZ
+MIPS32#BRANCH#83#BLEZL 010110 rs 00000 offset #5 5 16 #BLEZL rs, offset #Branch on Less Than or Equal to Zero Likely BLEZL
+MIPS32#BRANCH#85#REGIMM 000001 rs 00000 offset #5 5 16 #BLTZ rs, offset #Branch on Less Than Zero BLTZ
+MIPS32#BRANCH#86#REGIMM 000001 rs 10000 offset #5 5 16 #BLTZAL rs, offset #Branch on Less Than Zero and Link BLTZAL
+MIPS32#BRANCH#87#REGIMM 000001 rs 10010 offset #5 5 16 #BLTZALL rs, offset #Branch on Less Than Zero and Link Likely BLTZALL
+MIPS32#BRANCH#89#REGIMM 000001 rs 00010 offset #5 5 16 #BLTZL rs, offset #Branch on Less Than Zero Likely BLTZL
+MIPS32#BRANCH#91#BNE 000101 rs rt offset #5 5 16 #BNE rs, rt, offset #Branch on Not Equal BNE
+MIPS32#BRANCH#92#BNEL 010101 rs rt offset #5 5 16 #BNEL rs, rt, offset #Branch on Not Equal Likely BNEL
+MIPS32#BREAK#94#SPECIAL 000000 code20 001101 #20 6 #BREAK #Breakpoint BREAK
+MIPS32#FLOAT#95#COP1 010001 fmt ft fs 0 0 0 11 cond #5 5 5 3 1 1 2 4 #C.cond.S fs, ft (cc = 0 implied) #Floating Point Compare C.cond.fmt
+MIPS32#FLOAT#95#COP1 010001 fmt ft fs 0 0 0 11 cond #5 5 5 3 1 1 2 4 #C.cond.D fs, ft (cc = 0 implied) #Floating Point Compare C.cond.fmt
+MIPS64,MIPS32R2#INVALID#95#COP1 010001 fmt ft fs 0 0 0 11 cond #5 5 5 3 1 1 2 4 #C.cond.PS fs, ft (cc = 0 implied) #Floating Point Compare C.cond.fmt
+MIPS32#FLOAT#95#COP1 010001 fmt ft fs ccm 0 0 11 cond #5 5 5 3 1 1 2 4 #C.cond.S fs, ft (cc = 0 implied) #Floating Point Compare C.cond.fmt
+MIPS32#FLOAT#95#COP1 010001 fmt ft fs ccm 0 0 11 cond #5 5 5 3 1 1 2 4 #C.cond.D fs, ft (cc = 0 implied) #Floating Point Compare C.cond.fmt
+MIPS64,MIPS32R2#INVALID#95#COP1 010001 fmt ft fs ccm 0 0 11 cond #5 5 5 3 1 1 2 4 #C.cond.PS fs, ft (cc = 0 implied) #Floating Point Compare C.cond.fmt
+MIPS32#CACHE#100#CACHE 101111 base op offset #5 5 16 #CACHE op, offset(base) #To perform the cache operation specified by op
+MIPS64,MIPS32R2#INVALID#107#COP1 010001 fmt 00000 fs fd 001010 #5 5 5 5 6 #CEIL.L.S   fd, fs #Fixed Point Ceiling Convert to Long Fixed Point CEIL.L.fmt
+MIPS64,MIPS32R2#INVALID#107#COP1 010001 fmt 00000 fs fd 001010 #5 5 5 5 6 #CEIL.L.D   fd, fs #Fixed Point Ceiling Convert to Long Fixed Point CEIL.L.fmt
+MIPS32#FLOAT#109#COP1 010001 fmt 00000 fs fd 001110 #5 5 5 5 6 #CEIL.W.S   fd, fs #Floating Point Ceiling Convert to Word Fixed Point CEIL.W.fmt
+MIPS32#FLOAT#109#COP1 010001 fmt 00000 fs fd 001110 #5 5 5 5 6 #CEIL.W.D   fd, fs #Floating Point Ceiling Convert to Word Fixed Point CEIL.W.fmt
+MIPS32#FLOAT#110#COP1 010001 00010 rt fs 00000000000 #5 5 5 11 #CFC1 rt, fs #Move Control Word From Floating Point CFC1
+MIPS32#INVALID#112#COP2 010010 00010 rt Impl #5 5 16 #CFC2 rt, rd #Move Control Word From Coprocessor 2 CFC2
+MIPS32#ALU#113#SPECIAL2 011100 rs rt rd 00000 100001 #5 5 5 5 6 #CLO rd, rs #Count Leading Ones in Word CLO
+MIPS32#ALU#114#SPECIAL2 011100 rs rt rd 00000 100000 #5 5 5 5 6 #CLZ rd, rs #Count Leading Zeros in Word CLZ
+MIPS32#FLOAT#116#COP1 010001 00110 rt fs 00000000000 #5 5 5 11 #CTC1   rt, fs #Move Control Word to Floating Point CTC1
+MIPS32#INVALID#118#COP2 010010 00110 rt Impl #5 5 16 #CTC2 rt, rd #Move Control Word to Coprocessor 2 CTC2
+MIPS32#FLOAT#119#COP1 010001 fmt 00000 fs fd 100001 #5 5 5 5 6 #CVT.D.S fd, fs #Floating Point Convert to Double Floating Point CVT.D.fmt
+MIPS32#FLOAT#119#COP1 010001 fmt 00000 fs fd 100001 #5 5 5 5 6 #CVT.D.W fd, fs #Floating Point Convert to Double Floating Point CVT.D.fmt
+MIPS64,MIPS32R2#INVALID#119#COP1 010001 fmt 00000 fs fd 100001 #5 5 5 5 6 #CVT.D.L fd, fs #Floating Point Convert to Double Floating Point CVT.D.fmt
+MIPS64,MIPS32R2#INVALID#120#COP1 010001 fmt 00000 fs fd 100101 #5 5 5 5 6 #CVT.L.S fd, fs #Floating Point Convert to Long Fixed Point CVT.L.fmt
+MIPS64,MIPS32R2#INVALID#120#COP1 010001 fmt 00000 fs fd 100101 #5 5 5 5 6 #CVT.L.D fd, fs #Floating Point Convert to Long Fixed Point CVT.L.fmt
+MIPS64,MIPS32R2#INVALID#122#COP1 010001 10000 ft fs fd 100110 #5 5 5 5 6 #CVT.PS.S fd, fs, ft #Floating Point Convert Pair to Paired Single CVT.PS.S
+MIPS32#FLOAT#124#COP1 010001 fmt 00000 fs fd 100000 #5 5 5 5 6 #CVT.S.D fd, fs #Floating Point Convert to Single Floating Point CVT.S.fmt
+MIPS32#FLOAT#124#COP1 010001 fmt 00000 fs fd 100000 #5 5 5 5 6 #CVT.S.W fd, fs #Floating Point Convert to Single Floating Point CVT.S.fmt
+MIPS64,MIPS32R2#INVALID#124#COP1 010001 fmt 00000 fs fd 100000 #5 5 5 5 6 #CVT.S.L fd, fs #Floating Point Convert to Single Floating Point CVT.S.fmt
+MIPS64,MIPS32R2#INVALID#125#COP1 010001 10110 00000 fs fd 101000 #5 5 5 5 6 #CVT.S.PL fd, fs #Floating Point Convert Pair Lower to Single Floating Point CVT.S.PL
+MIPS64,MIPS32R2#INVALID#126#COP1 010001 10110 00000 fs fd 100000 #5 5 5 5 6 #CVT.S.PU fd, fs #Floating Point Convert Pair Upper to Single Floating Point CVT.S.PU
+MIPS32#FLOAT#127#COP1 010001 fmt 00000 fs fd 100100 #5 5 5 5 6 #CVT.W.S fd, fs #Floating Point Convert to Word Fixed Point CVT.W.fmt
+MIPS32#FLOAT#127#COP1 010001 fmt 00000 fs fd 100100 #5 5 5 5 6 #CVT.W.D fd, fs #Floating Point Convert to Word Fixed Point CVT.W.fmt
+EJTAG#SPECIAL#128#COP0 010000 1 0000000000000000000 011111 #1 19 6 #DERET #Debug Exception Return DERET
+MIPS32R2#INVALID#130#COP0 010000 01011 00000 01100 00000 0 00 000 #5 5 5 5 1 2 3 #DI #Disable Interrupts DI
+MIPS32R2#INVALID#130#COP0 010000 01011 rt 01100 00000 0 00 000 #5 5 5 5 1 2 3 #DI rt #Disable Interrupts DI
+MIPS32#ALU#132#SPECIAL 000000 rs rt 0000000000 011010 #5 5 10 6 #DIV rs, rt #Divide Word DIV
+MIPS32#FLOAT#134#COP1 010001 fmt ft fs fd 000011 #5 5 5 5 6 #DIV.S fd, fs, ft #Floating Point Divide DIV.fmt
+MIPS32#FLOAT#134#COP1 010001 fmt ft fs fd 000011 #5 5 5 5 6 #DIV.D fd, fs, ft #Floating Point Divide DIV.fmt
+MIPS32#ALU#135#SPECIAL 000000 rs rt 0000000000 011011 #5 5 10 6 #DIVU rs, rt #Divide Unsigned Word DIVU
+MIPS32R2#ALU#136#SPECIAL 000000 00000 00000 00000 00011 000000 #5 5 5 5 6 #EHB #Execution Hazard Barrier EHB
+MIPS32R2#INVALID#137#COP0 010000 01011 00000 01100 00000 1 00 000 #5 5 5 5 1 2 3 #EI #Enable Interrupts EI
+MIPS32R2#INVALID#137#COP0 010000 01011 rt 01100 00000 1 00 000 #5 5 5 5 1 2 3 #EI rt#Enable Interrupts EI
+MIPS32#SPECIAL#139#COP0 010000 1 0000000000000000000 011000 #1 19 6 #ERET #Exception Return ERET
+MIPS32R2#ALU#141#SPECIAL3 011111 rs rt msbd lsb 000000 #5 5 5 5 6 #ext rt, rs, pos, size #Extract Bit Field EXT
+MIPS64,MIPS32R2#INVALID#143#COP1 010001 fmt 00000 fs fd 001011 #5 5 5 5 6 #FLOOR.L.S fd, fs #Floating Point Floor Convert to Long Fixed Point FLOOR.L.fmt
+MIPS64,MIPS32R2#INVALID#143#COP1 010001 fmt 00000 fs fd 001011 #5 5 5 5 6 #FLOOR.L.D fd, fs #Floating Point Floor Convert to Long Fixed Point FLOOR.L.fmt
+MIPS32#FLOAT#145#COP1 010001 fmt 00000 fs fd 001111 #5 5 5 5 6 #FLOOR.W.S   fd, fs #Floating Point Floor Convert to Word Fixed Point FLOOR.W.fmt
+MIPS32#FLOAT#145#COP1 010001 fmt 00000 fs fd 001111 #5 5 5 5 6 #FLOOR.W.D   fd, fs #Floating Point Floor Convert to Word Fixed Point FLOOR.W.fmt
+MIPS32R2#ALU#146#SPECIAL3 011111 rs rt msb lsb 000100 #5 5 5 5 6 #ins rt, rs, pos, size #Insert Bit Field INS
+MIPS32#BRANCH#148#J 000010 instr_index #26 #J target #Jump J
+MIPS32#BRANCH#149#JAL 000011 instr_index #26 #JAL target #Jump and Link JAL
+MIPS32#BRANCH#150#SPECIAL 000000 rs 00000 rd jhint5 001001 #5 5 5 5 6 #JALR rs (rd = 31 implied) #Jump and Link Register JALR
+MIPS32R2#BRANCH#152#SPECIAL 000000 rs 00000 rd 1 jhint4 001001 #5 5 5 1 4 6 #JALR.HB rd, rs #Jump and Link Register with Hazard Barrier JALR.HB
+MIPS32#BRANCH#155#SPECIAL 000000 rs 0000000000 jhint5 001000 #5 10 5 6 #JR rs #Jump Register JR
+MIPS32R2#BRANCH#157#SPECIAL 000000 rs 0000000000 1 jhint4 001000 #5 10 1 4 6 #JR.HB rs #Jump Register with Hazard Barrier JR.HB
+MIPS32#LOAD#160#LB 100000 base rt offset #5 5 16 #LB rt, offset(base) #Load Byte LB
+MIPS32#LOAD#161#LBU 100100 base rt offset #5 5 16 #LBU rt, offset(base) #Load Byte Unsigned LBU
+MIPS32#LOAD#162#LDC1 110101 base ft offset #5 5 16 #LDC1 ft, offset(base) #Load Doubleword to Floating Point LDC1
+MIPS32#INVALID#163#LDC2 110110 base rt offset #5 5 16 #LDC2 rt, offset(base) #Load Doubleword to Coprocessor 2 LDC2
+MIPS64,MIPS32R2#INVALID#164#COP1X 010011 base index 00000 fd 000001 #5 5 5 5 6 #LDXC1 fd, index(base) #Load Doubleword Indexed to Floating Point LDXC1
+MIPS32#LOAD#165#LH 100001 base rt offset #5 5 16 #LH rt, offset(base) #Load Halfword LH
+MIPS32#LOAD#166#LHU 100101 base rt offset #5 5 16 #LHU rt, offset(base) #Load Halfword Unsigned LHU
+MIPS32#LOAD#167#LL 110000 base rt offset #5 5 16 #LL rt, offset(base) #Load Linked Word LL
+MIPS32#LOAD#169#LUI 001111 00000 rt immediate #5 5 16 #LUI rt, immediate #Load Upper Immediate LUI
+MIPS64,MIPS32R2#INVALID#170#COP1X 010011 base index 00000 fd 000101 #5 5 5 5 6 #LUXC1 fd, index(base) #Load Doubleword Indexed Unaligned to Floating Point LUXC1
+MIPS32#LOAD#171#LW 100011 base rt offset #5 5 16 #LW rt, offset(base) #Load Word LW
+MIPS32#LOAD#172#LWC1 110001 base ft offset #5 5 16 #LWC1 ft, offset(base) #Load Word to Floating Point LWC1
+MIPS32#INVALID#173#LWC2 110010 base rt offset #5 5 16 #LWC2 rt, offset(base) #Load Word to Coprocessor 2 LWC2
+MIPS32#LOAD#174#LWL 100010 base rt offset #5 5 16 #LWL rt, offset(base) #Load word Left LWL
+MIPS32#LOAD#177#LWR 100110 base rt offset #5 5 16 #LWR rt, offset(base) #Load Word Right LWR
+MIPS64,MIPS32R2#INVALID#181#COP1X 010011 base index 00000 fd 000000 #5 5 5 5 6 #LWXC1 fd, index(base) #Load Word Indexed to Floating Point LWXC1
+MIPS32#ALU#182#SPECIAL2 011100 rs rt 0000 00000 000000 #5 5 5 5 6 #MADD  rs, rt #Multiply and Add Word to Hi,Lo MADD
+MIPS64,MIPS32R2#INVALID#183#COP1X 010011 fr ft fs fd 100 fmt #5 5 5 5 3 3 #MADD.S fd, fr, fs, ft #Floating Point Multiply Add MADD.fmt
+MIPS64,MIPS32R2#INVALID#183#COP1X 010011 fr ft fs fd 100 fmt #5 5 5 5 3 3 #MADD.D fd, fr, fs, ft #Floating Point Multiply Add MADD.fmt
+MIPS64,MIPS32R2#INVALID#183#COP1X 010011 fr ft fs fd 100 fmt #5 5 5 5 3 3 #MADD.PS fd, fr, fs, ft #Floating Point Multiply Add MADD.fmt
+MIPS32#ALU#185#SPECIAL2 011100 rs rt 00000 00000 000001 #5 5 5 5 6 #MADDU rs, rt #Multiply and Add Unsigned Word to Hi,Lo MADDU
+MIPS32#SPECIAL#186#COP0 010000 00000 rt rd 00000000 sel #5 5 5 8 3 #MFC0 rt, rd sel #Move from Coprocessor 0 MFC0
+MIPS32#SPECIAL#187#COP1 010001 00000 rt fs 00000000000 #5 5 5 11 #MFC1 rt, fs #Move Word From Floating Point MFC1
+MIPS32#INVALID#188#COP2 010010 00000 rt Impl #5 5 16 #MFC2 rt, rd #Move Word From Coprocessor 2 MFC2
+MIPS32R2#INVALID#189#COP1 010001 00011 rt fs 00000000000 #5 5 5 11 #MFHC1 rt, fs #Move Word From High Half of Floating Point Register MFHC1
+MIPS32R2#INVALID#190#COP2 010010 00011 rt Impl #5 5 16 #MFHC2 rt, rd #Move Word From High Half of Coprocessor 2 Register MFHC2
+MIPS32#ALU#191#SPECIAL 000000 0000000000 rd 00000 010000 #10 5 5 6 #MFHI rd #Move From HI Register MFHI
+MIPS32#ALU#192#SPECIAL 000000 0000000000 rd 00000 010010 #10 5 5 6 #MFLO   rd #Move From LO Register MFLO
+MIPS32#FLOAT#193#COP1 010001 fmt 00000 fs fd 000110 #5 5 5 5 6 #MOV.S fd, fs #Floating Point Move MOV.fmt
+MIPS32#FLOAT#193#COP1 010001 fmt 00000 fs fd 000110 #5 5 5 5 6 #MOV.D fd, fs #Floating Point Move MOV.fmt
+MIPS64,MIPS32R2#INVALID#193#COP1 010001 fmt 00000 fs fd 000110 #5 5 5 5 6 #MOV.PS fd, fs #Floating Point Move MOV.fmt
+MIPS32#FLOAT#194#SPECIAL 000000 rs ccn 0 0 rd 00000 000001 #5 3 1 1 5 5 6 #MOVF rd, rs, cc #Move Conditional on Floating Point False MOVF
+MIPS32#FLOAT#195#COP1 010001 fmt ccn 0 0 fs fd 010001 #5 3 1 1 5 5 6 #MOVF.S fd, fs, cc #Floating Point Move Conditional on Floating Point False MOVF.fmt
+MIPS32#FLOAT#195#COP1 010001 fmt ccn 0 0 fs fd 010001 #5 3 1 1 5 5 6 #MOVF.D fd, fs, cc #Floating Point Move Conditional on Floating Point False MOVF.fmt
+MIPS64,MIPS32R2#INVALID#195#COP1 010001 fmt ccn 0 0 fs fd 010001 #5 3 1 1 5 5 6 #MOVF.PS fd, fs, cc #Floating Point Move Conditional on Floating Point False MOVF.fmt
+MIPS32#ALU#197#SPECIAL 000000 rs rt rd 00000 001011 #5 5 5 5 6 #MOVN rd, rs, rt #Move Conditional on Not Zero MOVN
+MIPS32#FLOAT#198#COP1 010001 fmt rt fs fd 010011 #5 5 5 5 6 #MOVN.S fd, fs, rt #Floating Point Move Conditional on Not Zero MOVN.fmt
+MIPS32#FLOAT#198#COP1 010001 fmt rt fs fd 010011 #5 5 5 5 6 #MOVN.D fd, fs, rt #Floating Point Move Conditional on Not Zero MOVN.fmt
+MIPS64,MIPS32R2#INVALID#198#COP1 010001 fmt rt fs fd 010011 #5 5 5 5 6 #MOVN.PS fd, fs, rt #Floating Point Move Conditional on Not Zero MOVN.fmt
+MIPS32#FLOAT#200#SPECIAL 000000 rs ccn 0 1 rd 00000 000001 #5 3 1 1 5 5 6 #MOVT rd, rs, cc #Move Conditional on Floating Point True MOVT
+MIPS32#FLOAT#201#COP1 010001 fmt ccn 0 1 fs fd 010001 #5 3 1 1 5 5 6 #MOVT.S fd, fs, cc #Floating Point Move Conditional on Floating Point True MOVT.fmt
+MIPS32#FLOAT#201#COP1 010001 fmt ccn 0 1 fs fd 010001 #5 3 1 1 5 5 6 #MOVT.D fd, fs, cc #Floating Point Move Conditional on Floating Point True MOVT.fmt
+MIPS64,MIPS32R2#INVALID#201#COP1 010001 fmt ccn 0 1 fs fd 010001 #5 3 1 1 5 5 6 #MOVT.PS fd, fs, cc #Floating Point Move Conditional on Floating Point True MOVT.fmt
+MIPS32#ALU#203#SPECIAL 000000 rs rt rd 00000 001010 #5 5 5 5 6 #MOVZ rd, rs, rt #Move Conditional on Zero MOVZ
+MIPS32#FLOAT#204#COP1 010001 fmt rt fs fd 010010 #5 5 5 5 6 #MOVZ.S fd, fs, rt #Floating Point Move Conditional on Zero MOVZ.fmt
+MIPS32#FLOAT#204#COP1 010001 fmt rt fs fd 010010 #5 5 5 5 6 #MOVZ.D fd, fs, rt #Floating Point Move Conditional on Zero MOVZ.fmt
+MIPS64,MIPS32R2#INVALID#204#COP1 010001 fmt rt fs fd 010010 #5 5 5 5 6 #MOVZ.PS fd, fs, rt #Floating Point Move Conditional on Zero MOVZ.fmt
+MIPS32#FLOAT#206#SPECIAL2 011100 rs rt 00000 00000 000100 #5 5 5 5 6 #MSUB rs, rt #Multiply and Subtract Word to Hi,Lo MSUB
+MIPS32#INVALID#207#COP1X 010011 fr ft fs fd 101 fmt #5 5 5 5 3 3 #MSUB.S fd, fr, fs, ft #Floating Point Multiply Subtract MSUB.fmt
+MIPS32#INVALID#207#COP1X 010011 fr ft fs fd 101 fmt #5 5 5 5 3 3 #MSUB.D fd, fr, fs, ft #Floating Point Multiply Subtract MSUB.fmt
+MIPS64,MIPS32R2#INVALID#207#COP1X 010011 fr ft fs fd 101 fmt #5 5 5 5 3 3 #MSUB.PS fd, fr, fs, ft #Floating Point Multiply Subtract MSUB.fmt
+MIPS32#ALU#209#SPECIAL2 011100 rs rt 00000 00000 000101 #5 5 5 5 6 #MSUBU rs, rt #Multiply and Subtract Word to Hi,Lo MSUBU
+MIPS32#SPECIAL#210#COP0 010000 00100 rt rd 0000000 sel #5 5 5 8 3 #MTC0 rt, rd sel #Move to Coprocessor 0 MTC0
+MIPS32#SPECIAL#211#COP1 010001 00100 rt fs 00000000000 #5 5 5 11 #MTC1 rt, fs #Move Word to Floating Point MTC1
+MIPS32#SPECIAL#212#COP2 010010 00100 rt Impl #5 5 16 #MTC2 rt, rd #Move Word to Coprocessor 2 MTC2
+MIPS32R2#SPECIAL#213#COP1 010001 00111 rt fs 00000000000 #5 5 5 11 #MTHC1 rt, fs #Move Word to High Half of Floating Point Register MTHC1
+MIPS32R2#SPECIAL#214#COP2 010010 00111 rt Impl #5 5 16 #MTHC2 rt, rd #Move Word to High Half of Coprocessor 2 Register MTHC2
+MIPS32#ALU#215#SPECIAL 000000 rs 000000000000000 010001 #5 15 6 #MTHI rs #Move to HI Register MTHI
+MIPS32#ALU#216#SPECIAL 000000 rs 000000000000000 010011 #5 15 6 #MTLO rs #Move to LO Register MTLO
+MIPS32#ALU#217#SPECIAL2 011100 rs rt rd 00000 000010 #5 5 5 5 6 #MUL rd, rs, rt #Multiply Word to GPR MUL
+MIPS32#FLOAT#218#COP1 010001 fmt ft fs fd 000010 #5 5 5 5 6 #MUL.S fd, fs, ft #Floating Point Multiply MUL.fmt
+MIPS32#FLOAT#218#COP1 010001 fmt ft fs fd 000010 #5 5 5 5 6 #MUL.D fd, fs, ft #Floating Point Multiply MUL.fmt
+MIPS64,MIPS32R2#INVALID#218#COP1 010001 fmt ft fs fd 000010 #5 5 5 5 6 #MUL.PS fd, fs, ft #Floating Point Multiply MUL.fmt
+MIPS32#ALU#219#SPECIAL 000000 rs rt 0000000000 011000 #5 5 10 6 #MULT rs, rt #Multiply Word MULT
+MIPS32#ALU#220#SPECIAL 000000 rs rt 0000000000 011001 #5 5 10 6 #MULTU rs, rt #Multiply Unsigned Word MULTU
+MIPS32#FLOAT#221#COP1 010001 fmt 00000 fs fd 000111 #5 5 5 5 6 #NEG.S fd, fs #Floating Point Negate NEG.fmt
+MIPS32#FLOAT#221#COP1 010001 fmt 00000 fs fd 000111 #5 5 5 5 6 #NEG.D fd, fs #Floating Point Negate NEG.fmt
+MIPS64,MIPS32R2#INVALID#221#COP1 010001 fmt 00000 fs fd 000111 #5 5 5 5 6 #NEG.PS fd, fs #Floating Point Negate NEG.fmt
+MIPS64#INVALID#222#COP1X 010011 fr ft fs fd 110 fmt #5 5 5 5 3 3 #NMADD.S fd, fr, fs, ft #Floating Point Negative Multiply Add NMADD.fmt
+MIPS64#INVALID#222#COP1X 010011 fr ft fs fd 110 fmt #5 5 5 5 3 3 #NMADD.D fd, fr, fs, ft #Floating Point Negative Multiply Add NMADD.fmt
+MIPS64,MIPS32R2#INVALID#222#COP1X 010011 fr ft fs fd 110 fmt #5 5 5 5 3 3 #NMADD.PS fd, fr, fs, ft #Floating Point Negative Multiply Add NMADD.fmt
+MIPS64#INVALID#224#COP1X 010011 fr ft fs fd 111 fmt #5 5 5 5 3 3 #NMSUB.S fd, fr, fs, ft #Floating Point Negative Multiply Subtract NMSUB.fmt
+MIPS64#INVALID#224#COP1X 010011 fr ft fs fd 111 fmt #5 5 5 5 3 3 #NMSUB.D fd, fr, fs, ft #Floating Point Negative Multiply Subtract NMSUB.fmt
+MIPS64,MIPS32R2#INVALID#224#COP1X 010011 fr ft fs fd 111 fmt #5 5 5 5 3 3 #NMSUB.PS fd, fr, fs, ft #Floating Point Negative Multiply Subtract NMSUB.fmt
+ASSEMBLY IDIOM#ALU#226#SPECIAL 000000 00000 00000 00000 00000 000000 #5 5 5 5 6 #NOP #No Operation NOP
+MIPS32#ALU#227#SPECIAL 000000 rs rt rd 00000 100111 #5 5 5 5 6 #NOR rd, rs, rt #Not Or NOR
+MIPS32#ALU#228#SPECIAL 000000 rs rt rd 00000 100101 #5 5 5 5 6 #OR rd, rs, rt #Or OR
+MIPS32#ALU#229#ORI 001101 rs rt immediate #5 5 16 #ORI rt, rs, immediate #Or Immediate ORI
+MIPS64,MIPS32R2#INVALID#230#COP1 010001 10110 ft fs fd 101100 #5 5 5 5 6 #PLL.PS fd, fs, ft #Pair Lower Lower PLL.PS
+MIPS64,MIPS32R2#INVALID#231#COP1 010001 10110 ft fs fd 101101 #5 5 5 5 6 #PLU.PS fd, fs, ft #Pair Lower Upper PLU.PS
+MIPS32#LOAD#232#PREF 110011 base hint offset #5 5 16 #PREF hint,offset(base) #Prefetch PREF
+MIPS64,MIPS32R2#INVALID#236#COP1X 010011 base index hint 00000 001111 #5 5 5 5 6 #PREFX hint, index(base) #Prefetch Indexed PREFX
+MIPS64,MIPS32R2#INVALID#237#COP1 010001 10110 ft fs fd 101110 #5 5 5 5 6 #PUL.PS fd, fs, ft #Pair Upper Lower PUL.PS
+MIPS64,MIPS32R2#INVALID#238#COP1 010001 10110 ft fs fd 101111 #5 5 5 5 6 #PUU.PS fd, fs, ft #Pair Upper Upper PUU.PS
+MIPS32R2#SPECIAL#239#SPECIAL3 011111 00000 rt rd 00000 11 1011 #5 5 5 2 3 6 #RDHWR rt, rd #Read Hardware Register
+MIPS32R2#INVALID#241#COP0 010000 01010 rt rd 00000000000 #5 5 5 11 #RDPGPR rd, rt #Read GPR from Previous Shadow Set RDPGPR
+MIPS64,MIPS32R2#FLOAT#242#COP1 010001 fmt 00000 fs fd 010101 #5 5 5 5 6 #RECIP.S   fd, fs #Reciprocal Approximation RECIP.fmt
+MIPS64,MIPS32R2#FLOAT#242#COP1 010001 fmt 00000 fs fd 010101 #5 5 5 5 6 #RECIP.D   fd, fs #Reciprocal Approximation RECIP.fmt
+SMARTMIPS CRYPTO,MIPS32R2#INVALID#244#SPECIAL 000000 0000 1 rt rd sa 000010 #4 1 5 5 5 6 #ROTR rd, rt, sa #Rotate Word Right ROTR
+SMARTMIPS CRYPTO,MIPS32R2#INVALID#245#SPECIAL 000000 rs rt rd 0000 1 000110 #5 5 5 4 1 6 #ROTRV rd, rt, sa #Rotate Word Right Variable ROTRV
+MIPS64,MIPS32R2#INVALID#246#COP1 010001 fmt 00000 fs fd 001000 #5 5 5 5 6 #ROUND.L.S   fd, fs #Floating Point Round to Long Fixed Point ROUND.L.fmt
+MIPS64,MIPS32R2#INVALID#246#COP1 010001 fmt 00000 fs fd 001000 #5 5 5 5 6 #ROUND.L.D   fd, fs #Floating Point Round to Long Fixed Point ROUND.L.fmt
+MIPS32#FLOAT#248#COP1 010001 fmt 00000 fs fd 001100 #5 5 5 5 6 #ROUND.W.S   fd, fs #Floating Point Round to Word Fixed Point ROUND.W.fmt
+MIPS32#FLOAT#248#COP1 010001 fmt 00000 fs fd 001100 #5 5 5 5 6 #ROUND.W.D   fd, fs #Floating Point Round to Word Fixed Point ROUND.W.fmt
+MIPS64,MIPS32R2#FLOAT#250#COP1 010001 fmt 00000 fs fd 010110 #5 5 5 5 6 #RSQRT.S   fd, fs #Reciprocal Square Root Approximation RSQRT.fmt
+MIPS64,MIPS32R2#FLOAT#250#COP1 010001 fmt 00000 fs fd 010110 #5 5 5 5 6 #RSQRT.D   fd, fs #Reciprocal Square Root Approximation RSQRT.fmt
+MIPS32#STORE#252#SB 101000 base rt offset #5 5 16 #SB rt, offset(base) #Store Byte SB
+MIPS32#STORE#253#SC 111000 base rt offset #5 5 16 #SC rt, offset(base) #Store Conditional Word SC
+EJTAG#DEBUG#256#SPECIAL2 011100 code20 111111 #20 6 #sdbbp #Software Debug Breakpoint SDBBP
+MIPS32#STORE#257#SDC1 111101 base ft offset #5 5 16 #SDC1 ft, offset(base) #Store Doubleword from Floating Point SDC1
+MIPS32#INVALID#258#SDC2 111110 base rt offset #5 5 16 #SDC2 rt, offset(base) #Store Doubleword from Coprocessor 2 SDC2
+MIPS64,MIPS32R2#INVALID#259#COP1X 010011 base index fs 00000 001001 #5 5 5 5 6 #SDXC1 fs, index(base) #Store Doubleword Indexed from Floating Point SDXC1
+MIPS32R2#ALU#260#SPECIAL3 011111 00000 rt rd 10000 100000 #5 5 5 5 6 #seb rd, rt #Sign-Extend Byte SEB
+MIPS32R2#ALU#261#SPECIAL3 011111 00000 rt rd 11000 100000 #5 5 5 5 6 #seh rd, rt #Sign-Extend Halfword SEH
+MIPS32#STORE#263#SH 101001 base rt offset #5 5 16 #SH rt, offset(base) #Store Halfword SH
+MIPS32#ALU#264#SPECIAL 000000 00000 rt rd sa 000000 #5 5 5 5 6 #SLL rd, rt, sa #Shift Word Left Logical SLL
+MIPS32#ALU#265#SPECIAL 000000 rs rt rd 00000 000100 #5 5 5 5 6 #SLLV rd, rt, rs #Shift Word Left Logical Variable SLLV
+MIPS32#ALU#266#SPECIAL 000000 rs rt rd 00000 101010 #5 5 5 5 6 #SLT rd, rs, rt #Set on Less Than SLT
+MIPS32#ALU#267#SLTI 001010 rs rt immediate #5 5 16 #SLTI rt, rs, immediate #Set on Less Than Immediate SLTI
+MIPS32#ALU#268#SLTIU 001011 rs rt immediate #5 5 16 #SLTIU rt, rs, immediate #Set on Less Than Immediate Unsigned SLTIU
+MIPS32#ALU#269#SPECIAL 000000 rs rt rd 00000 101011 #5 5 5 5 6 #SLTU rd, rs, rt #Set on Less Than Unsigned SLTU
+MIPS32#FLOAT#270#COP1 010001 fmt 00000 fs fd 000100 #5 5 5 5 6 #SQRT.S fd, fs #Floating Point Square Root SQRT.fmt
+MIPS32#FLOAT#270#COP1 010001 fmt 00000 fs fd 000100 #5 5 5 5 6 #SQRT.D fd, fs #Floating Point Square Root SQRT.fmt
+MIPS32#ALU#271#SPECIAL 000000 00000 rt rd sa 000011 #5 5 5 5 6 #SRA rd, rt, sa #Shift Word Right Arithmetic SRA
+MIPS32#ALU#272#SPECIAL 000000 rs rt rd 00000 000111 #5 5 5 5 6 #SRAV rd, rt, rs #Shift Word Right Arithmetic Variable SRAV
+MIPS32#ALU#273#SPECIAL 000000 0000 0 rt rd sa 000010 #4 1 5 5 5 6 #SRL rd, rt, sa #Shift Word Right Logical SRL
+MIPS32#ALU#274#SPECIAL 000000 rs rt rd 0000 0 000110 #5 5 5 4 1 6 #SRLV rd, rt, rs #Shift Word Right Logical Variable SRLV
+MIPS32#ALU#275#SPECIAL 000000 00000 00000 00000 00001 000000 #5 5 5 5 6 #SSNOP #Superscalar No Operation SSNOP
+MIPS32#ALU#276#SPECIAL 000000 rs rt rd 00000 100010 #5 5 5 5 6 #SUB rd, rs, rt #Subtract Word SUB
+MIPS32#FLOAT#277#COP1 010001 fmt ft fs fd 000001 #5 5 5 5 6 #SUB.S fd, fs, ft #Floating Point Subtract SUB.fmt
+MIPS32#FLOAT#277#COP1 010001 fmt ft fs fd 000001 #5 5 5 5 6 #SUB.D fd, fs, ft #Floating Point Subtract SUB.fmt
+MIPS64,MIPS32R2#INVALID#277#COP1 010001 fmt ft fs fd 000001 #5 5 5 5 6 #SUB.PS fd, fs, ft #Floating Point Subtract SUB.fmt
+MIPS32#ALU#278#SPECIAL 000000 rs rt rd 00000 100011 #5 5 5 5 6 #SUBU rd, rs, rt #Subtract Unsigned Word SUBU
+MIPS64,MIPS32R2#STORE#279#COP1X 010011 base index fs 00000 001101 #5 5 5 5 6 #SUXC1 fs, index(base) #Store Doubleword Indexed Unaligned from Floating Point SUXC1
+MIPS32#STORE#280#SW 101011 base rt offset #5 5 16 #SW rt, offset(base) #Store Word SW
+MIPS32#STORE#281#SWC1 111001 base ft offset #5 5 16 #SWC1 ft, offset(base) #Store Word from Floating Point SWC1
+MIPS32#INVALID#282#SWC2 111010 base rt offset #5 5 16 #SWC2 rt, offset(base) #Store Word from Coprocessor 2 SWC2
+MIPS32#STORE#283#SWL 101010 base rt offset #5 5 16 #SWL rt, offset(base) #Store Word Left
+MIPS32#STORE#285#SWR 101110 base rt offset #5 5 16 #SWR rt, offset(base) #Store Word Right
+MIPS64,MIPS32R2#INVALID#287#COP1X 010011 base index fs 00000 001000 #5 5 5 5 6 #SWXC1 fs, index(base) #Store Word Indexed from Floating Point SWXC1
+MIPS32#SPECIAL#288#SPECIAL 000000 000000000000000 stype 001111 #15 5 6 #SYNC (stype = 0 implied) #Synchronize Shared Memory SYNC
+MIPS32R2#SPECIAL#292#REGIMM 000001 base 11111 offset #5 5 16 #SYNCI offset(base) #Synchronize Caches to Make Instruction Writes Effective SYNCI
+MIPS32#SPECIAL#295#SPECIAL 000000 code20 001100 #20 6 #SYSCALL #System Call SYSCALL
+MIPS32#TRAP#296#SPECIAL 000000 rs rt code10 110100 #5 5 10 6 #TEQ rs, rt #Trap if Equal TEQ
+MIPS32#TRAP#297#REGIMM 000001 rs 01100 immediate #5 5 16 #TEQI rs, immediate #Trap if Equal Immediate TEQI
+MIPS32#TRAP#298#SPECIAL 000000 rs rt code10 110000 #5 5 10 6 #TGE rs, rt #Trap if Greater or Equal TGE
+MIPS32#TRAP#299#REGIMM 000001 rs 01000 immediate #5 5 16 #TGEI rs, immediate #Trap if Greater or Equal Immediate TGEI
+MIPS32#TRAP#300#REGIMM 000001 rs 01001 immediate #5 5 16 #TGEIU rs, immediate #Trap if Greater or Equal Immediate Unsigned TGEIU
+MIPS32#TRAP#301#SPECIAL 000000 rs rt code10 110001 #5 5 10 6 #TGEU rs, rt #Trap if Greater or Equal Unsigned TGEU
+MIPS32#TLB#302#COP0 010000 1 0000000000000000000 001000 #1 19 6 #TLBP #Probe TLB for Matching Entry TLBP
+MIPS32#TLB#303#COP0 010000 1 0000000000000000000 000001 #1 19 6 #TLBR #Read Indexed TLB Entry TLBR
+MIPS32#TLB#305#COP0 010000 1 0000000000000000000 000010 #1 19 6 #TLBWI #Write Indexed TLB Entry TLBWI
+MIPS32#TLB#307#COP0 010000 1 0000000000000000000 000110 #1 19 6 #TLBWR #Write Random TLB Entry TLBWR
+MIPS32#TRAP#309#SPECIAL 000000 rs rt code10 110010 #5 5 10 6 #TLT rs, rt #Trap if Less Than TLT
+MIPS32#TRAP#310#REGIMM 000001 rs 01010 immediate #5 5 16 #TLTI rs, immediate #Trap if Less Than Immediate TLTI
+MIPS32#TRAP#311#REGIMM 000001 rs 01011 immediate #5 5 16 #TLTIU rs, immediate #Trap if Less Than Immediate Unsigned TLTIU
+MIPS32#TRAP#312#SPECIAL 000000 rs rt code10 110011 #5 5 10 6 #TLTU rs, rt #Trap if Less Than Unsigned TLTU
+MIPS32#TRAP#313#SPECIAL 000000 rs rt code10 110110 #5 5 10 6 #TNE rs, rt #Trap if Not Equal TNE
+MIPS32#TRAP#314#REGIMM 000001 rs 01110 immediate #5 5 16 #TNEI rs, immediate #Trap if Not Equal Immediate TNEI
+MIPS64,MIPS32R2#INVALID#315#COP1 010001 fmt 00000 fs fd 001001 #5 5 5 5 6 #TRUNC.L.S fd, fs #Floating Point Truncate to Long Fixed Point TRUNC.L.fmt
+MIPS64,MIPS32R2#INVALID#315#COP1 010001 fmt 00000 fs fd 001001 #5 5 5 5 6 #TRUNC.L.D fd, fs #Floating Point Truncate to Long Fixed Point TRUNC.L.fmt
+MIPS32#FLOAT#317#COP1 010001 fmt 00000 fs fd 001101 #5 5 5 5 6 #TRUNC.W.S fd, fs #Floating Point Truncate to Word Fixed Point TRUNC.W.fmt
+MIPS32#FLOAT#317#COP1 010001 fmt 00000 fs fd 001101 #5 5 5 5 6 #TRUNC.W.D fd, fs #Floating Point Truncate to Word Fixed Point TRUNC.W.fmt
+MIPS32#SPECIAL#319#COP0 010000 1 Implementation_Dependent_Code 100000 #1 19 6 #WAIT #Enter Standby Mode WAIT
+MIPS32R2#INVALID#321#COP0 010000 01110 rt rd 00000000000 #5 5 5 11 #WRPGPR rd, rt #Write to GPR in Previous Shadow Set WRPGP
+MIPS32R2#INVALID#322#SPECIAL3 011111 00000 rt rd 00010 100000 #5 5 5 5 6 #wsbh rd, rt #Word Swap Bytes Within Halfwords WSBH
+MIPS32#ALU#323#SPECIAL 000000 rs rt rd 00000 100110 #5 5 5 5 6 #XOR rd, rs, rt #Exclusive OR XOR
+MIPS32#ALU#324#XORI 001110 rs rt immediate #5 5 16 #XORI rt, rs, immediate #Exclusive OR Immediate XORI
