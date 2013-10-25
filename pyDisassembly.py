@@ -48,7 +48,7 @@ class MIPS_DB_Ops(DB_operation):
 		return (inst_split[0], inst_split[1], inst_split[2:])
 
 class DB():
-
+	"""DataBase for instruction"""
 	Hash = {}
 
 	def __init__(self, ops):
@@ -189,29 +189,52 @@ class DB():
 
 			print format
 
-#class Console(cmd.Cmd):
-#	"""Simple command processor example."""
+class Console(cmd.Cmd):
+	"""Prompt Console"""
+
+	def __init__(self, prompt='prompt >'):
+		cmd.Cmd.__init__(self)		# old-style class
+		self.prompt = prompt
+		self.db_ops = MIPS_DB_Ops()
+		self.db = DB(self.db_ops)
+		self.db.updateDB()
+
+#	def onecmd(self, line):
+#		cmd, arg, line = self.parseline(line)
+#		if not line:
+#			return self.emptyline()
+#		if cmd is None:
+#			return self.default(line)
+#		self.lastcmd = line
 #
-#	def __init__(self, prompt):
-#		super(Console, self).__init__()
-#		self.prompt = prompt
+#		if line 
 #
-#	def do_greet(self, line):
-#		print "hello"
-#
-#	def do_EOF(self, line):
-#		return True
+#		print cmd
+#		print arg
+#		print line
+#	def cmdloop(self):
+#		while True:
+#			cmd = raw_input(self.prompt)
+#			print cmd
+
+	def do_d(self, line):
+		regexp_inst = re.match('([0-9A-Fa-f]{8})|0x([0-9A-Fa-f]{8})', line)
+		if regexp_inst is not None:
+			self.db.parseCmd(regexp_inst.group())
+	
+	def do_q(self, line):
+		return True
+
+	def do_EOF(self, line):
+		return True
 
 if __name__ == '__main__':
-#	console = Console('prompt >')
-#	console.cmdloop()
+	console = Console()
+	console.cmdloop()
 #		db_ops = VU()
 #		db = DB(db_ops)
 #		db.op.insert()
 #		db.op.delete()
 #		db.op.search()
-		db_ops = MIPS_DB_Ops()
-		db = DB(db_ops)
-		db.updateDB()
-
-		db.parseCmd("34002345")
+	
+#	db.parseCmd("34002345")
